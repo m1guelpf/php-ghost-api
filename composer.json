@@ -1,0 +1,40 @@
+{
+    "name": "m1guelpf/ghost-api",
+    "description": "PHP Client for the Ghost Content API",
+    "keywords": [
+        "ghost",
+        "ghost-api",
+        "ghost-content-api",
+        "m1guelpf"
+    ],
+    "homepage": "https://github.com/m1guelpf/php-ghost-api",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Miguel Piedrafita",
+            "email": "soy@miguelpiedrafita.com",
+            "homepage": "https://miguelpiedrafita.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : "^5.5|^7.0",
+        "guzzlehttp/guzzle":"^6.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "6.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "M1guelpf\\GhostAPI\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "M1guelpf\\GhostAPI\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    }
+}
