@@ -236,7 +236,15 @@ class Ghost
      */
     public function get($resource, array $query = [])
     {
-        return $this->handleCall('GET', $resource, $query, []);
+        if (! empty($query)) {
+            $query = array_unique(array_merge(array_filter($query), ['key' => $this->apiToken]), SORT_REGULAR);
+        } else {
+            $query = ['key' => $this->apiToken];
+        }
+
+        $results = file_get_contents("{$this->baseUrl}/{$resource}?".http_build_query($query));
+
+        return json_decode($results, true);
     }
 
     /**
